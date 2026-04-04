@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIEC | Projects</title>
+<meta name="description" content="Explore EIEC's portfolio of student-led venture projects spanning robotics, biotech, AI, and consumer products.">
+<meta property="og:title" content="EIEC | Projects">
+<meta property="og:description" content="Six venture teams building real products across robotics, biotech, AI, and more at UC San Diego.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="EIEC Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scanline-overlay"></div>
+<canvas id="global-particles"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-logo">EIEC <span>✦</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="page-content">
+
+<div class="hero-wrapper">
+  <section class="hero hero--single-col">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-content="projects_hero_eyebrow">Our Projects</div>
+      <h1 data-content-html="projects_hero_heading">What we've <em data-text="built.">built.</em></h1>
+      <p class="hero-sub" data-content="projects_hero_desc">Here's a look at some of the work that we have done. EIEC has helped bring together and mentor these teams.</p>
+    </div>
+  </section>
+</div>
+
+<hr class="glow-line">
+
+<section class="section">
+  <div class="reveal">
+    <div class="section-eyebrow" data-content="projects_section_eyebrow">Current</div>
+    <div class="section-title" data-content="projects_section_title">2025 - 2026</div>
+    <p class="section-desc" data-content="projects_section_desc">Six venture teams working across robotics, biotech, AI, and consumer products.</p>
+  </div>
+
+  <div class="card-grid reveal-stagger" id="projects-grid">
+    <!-- Loaded dynamically from Google Sheets -->
+
+  </div>
+
+  <div class="cta-banner cta-banner--spaced reveal">
+    <div>
+      <h3>Want to get involved?</h3>
+      <p>Do these projects sound interesting to you? See our open roles to join a team.</p>
+    </div>
+    <a href="recruitment.html" class="cta-btn">See Open Roles →</a>
+  </div>
+</section>
+
+</div><!-- #page-content -->
+
+<footer>
+  <span class="footer-text">EIEC · Engineering Innovators & Entrepreneurs · <span>UCSD</span> · Spring 2026</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="effects.js"></script>
+<script src="sheets.js"></script>
+</body>
+</html>

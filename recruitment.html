@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIEC | Recruitment</title>
+<meta name="description" content="Join an EIEC venture team. Open roles across software engineering, hardware, business strategy, design, and marketing.">
+<meta property="og:title" content="EIEC | Recruitment - Open Roles">
+<meta property="og:description" content="Join an EIEC venture team at UCSD. Zero-to-one projects in robotics, biotech, AI, and more.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="EIEC Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scanline-overlay"></div>
+<canvas id="global-particles"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-logo">EIEC <span>✦</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html" class="active">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="page-content">
+
+<div class="hero-wrapper">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-content="recruitment_hero_eyebrow">Open roles · Spring 2026</div>
+      <h1 data-content-html="recruitment_hero_heading">Build something<br><em data-text="real.">real.</em></h1>
+      <p class="hero-sub" data-content="recruitment_hero_desc">EIEC's portfolio of early-stage ventures is looking for students to join as volunteer interns. These are zero-to-one projects: scrappy, ambiguous, and genuinely exciting. You won't be shadowing anyone. You'll be doing the work.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-label">Active Projects</span>
+        <span class="stat-number" id="stat-active-projects">6</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Open Roles</span>
+        <span class="stat-number" id="stat-open-roles">22</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Hrs / Week</span>
+        <span class="stat-number" id="stat-hours">5–8</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Applications open</span>
+        <span class="stat-number">Now!</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<hr class="glow-line">
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filter('all', this)">All Roles</button>
+  <button class="filter-btn" onclick="filter('biz', this)">Business Strategy</button>
+  <button class="filter-btn" onclick="filter('swe', this)">Software Eng</button>
+  <button class="filter-btn" onclick="filter('hw', this)">Hardware Eng</button>
+  <button class="filter-btn" onclick="filter('design', this)">Design</button>
+  <button class="filter-btn" onclick="filter('mkt', this)">Marketing</button>
+</div>
+
+<main class="main" id="recruitment-projects">
+  <!-- Loaded dynamically from Google Sheets -->
+</main>
+
+</div><!-- #page-content -->
+
+<footer>
+  <span class="footer-text">EIEC · Engineering Innovators & Entrepreneurs · <span>UCSD</span> · Spring 2026</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="effects.js"></script>
+<script src="sheets.js"></script>
+<script>
+  function filter(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.role-card').forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+</script>
+</body>
+</html>

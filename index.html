@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIEC | Engineering Innovators & Entrepreneurs at UCSD</title>
+<meta name="description" content="EIEC is a student-run organization at UC San Diego that turns engineering talent into entrepreneurial builders through real venture projects.">
+<meta property="og:title" content="EIEC | Engineering Innovators & Entrepreneurs at UCSD">
+<meta property="og:description" content="Student-run org at UCSD turning engineers into founders. Real venture projects, real stakeholders, real experience.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="EIEC Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scanline-overlay"></div>
+<canvas id="global-particles"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-logo">EIEC <span>✦</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="page-content">
+
+<div class="hero-wrapper">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-content="hero_eyebrow">UCSD · Est. 2025</div>
+      <h1 data-content-html="hero_heading">Where engineers<br>become <em data-text="founders.">founders.</em></h1>
+      <p class="hero-sub" data-content="hero_description">The Engineering Innovators and Entrepreneurs Club (EIEC) is a student-run organization at UC San Diego that turns engineering talent into entrepreneurial builders. We work with real ventures and give students the experience of building from zero to one.</p>
+    </div>
+    <div class="hero-gear-wrapper">
+      <canvas id="gear-canvas"></canvas>
+    </div>
+  </section>
+</div>
+
+<hr class="glow-line">
+
+<section class="section reveal">
+  <div class="section-eyebrow">Our Mission</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h3 data-content="mission_heading">Turning engineers into innovators and entrepreneurs.</h3>
+      <p data-content="mission_paragraph1">At EIEC, we empower UC San Diego students to build ventures, solve real-world problems, and create what doesn't yet exist. We're shifting the campus focus from purely job-oriented pursuits toward innovation and entrepreneurship.</p>
+      <p data-content="mission_paragraph2">We foster an environment where students develop entrepreneurial thinking, tackle real challenges, and merge technical skills with business acumen. Our members don't just gain professional skills. They build the mindset and network to imagine, lead, and create.</p>
+    </div>
+    <div class="about-visual">
+      <div class="about-value">
+        <div class="about-value-icon green">&#9670;</div>
+        <div>
+          <h4 data-content="value1_title">Build Real Ventures</h4>
+          <p data-content="value1_desc">Work on actual startups from concept to prototype. Real problems, real users, real stakes.</p>
+        </div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-icon blue">&#9679;</div>
+        <div>
+          <h4 data-content="value2_title">Cross-Disciplinary Teams</h4>
+          <p data-content="value2_desc">Engineers, designers, and business strategists working together, the way real startups work.</p>
+        </div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-icon pink">&#9650;</div>
+        <div>
+          <h4 data-content="value3_title">Events & Workshops</h4>
+          <p data-content="value3_desc">We host workshops, speaker events, and general body meetings throughout the quarter to help you grow.</p>
+        </div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-icon orange">&#9733;</div>
+        <div>
+          <h4 data-content="value4_title">Get Connected</h4>
+          <p data-content="value4_desc">Join a community of builders. Whether you want to collaborate, learn, or just get inspired, we're here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="glow-line">
+
+<section class="section">
+  <div class="reveal">
+    <div class="section-eyebrow">Gallery</div>
+    <div class="section-title">EIEC in Action</div>
+  </div>
+  <div class="carousel reveal">
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-placeholder">Loading photos...</div>
+    </div>
+    <button class="carousel-btn carousel-prev" onclick="carouselMove(-1)" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn carousel-next" onclick="carouselMove(1)" aria-label="Next">&#8594;</button>
+  </div>
+</section>
+
+<hr class="glow-line">
+
+<section class="section">
+  <div class="reveal">
+    <div class="section-eyebrow">Leadership</div>
+    <div class="section-title" data-content="board_section_title">Meet the Board</div>
+    <p class="section-desc" data-content="board_section_desc">The people running EIEC. Students who've been in the trenches and are building the org they wish existed when they started.</p>
+  </div>
+  <div class="team-grid reveal-stagger" id="board-grid">
+    <!-- Loaded dynamically from Google Sheets -->
+  </div>
+</section>
+
+<hr class="glow-line">
+
+<section class="section reveal">
+  <div class="section-eyebrow">Get in Touch</div>
+  <div class="section-title" data-content="contact_title">Want to reach out?</div>
+  <p class="section-desc" data-content="contact_desc">Whether you're interested in joining us, partnering, or just want to learn more, reach out.</p>
+  <div class="contact-links">
+    <a href="mailto:eiec@ucsd.edu" class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value">eiec@ucsd.edu</span>
+    </a>
+    <a href="https://www.instagram.com/eiec_ucsd" target="_blank" class="contact-item">
+      <span class="contact-label">Instagram</span>
+      <span class="contact-value">@eiec_ucsd</span>
+    </a>
+    <a href="https://discord.com/invite/hBubnNJQCc" target="_blank" class="contact-item">
+      <span class="contact-label">Discord</span>
+      <span class="contact-value">Join our server</span>
+    </a>
+    <a href="https://www.linkedin.com/company/eiec-ucsd/" target="_blank" class="contact-item">
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-value">EIEC UCSD</span>
+    </a>
+  </div>
+</section>
+
+<section class="section section--flush reveal">
+  <div class="cta-banner">
+    <div>
+      <h3 data-content="cta_title">Ready to build something real?</h3>
+      <p data-content="cta_desc">We're currently recruiting. Check out our open projects and apply.</p>
+    </div>
+    <a href="recruitment.html" class="cta-btn">View Open Roles →</a>
+  </div>
+</section>
+
+</div><!-- #page-content -->
+
+<footer>
+  <span class="footer-text">EIEC · Engineering Innovators & Entrepreneurs · <span>UCSD</span> · Spring 2026</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="effects.js"></script>
+<script src="sheets.js"></script>
+</body>
+</html>

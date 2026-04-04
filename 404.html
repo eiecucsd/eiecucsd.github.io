@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIEC | 404</title>
+<meta name="description" content="Page not found - EIEC at UC San Diego.">
+<link rel="icon" type="image/png" href="EIEC Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="display: flex; flex-direction: column;">
+
+<div class="scanline-overlay"></div>
+<canvas id="global-particles"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-logo">EIEC <span>✦</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="four04">
+  <div class="four04-code">404</div>
+  <div class="four04-title">This is not the page you are looking for!</div>
+  <p class="four04-desc">There is no page here! Maybe it is still being built.</p>
+  <a href="index.html" class="four04-home">Back to Home →</a>
+</div>
+
+<footer>
+  <span class="footer-text">EIEC · Engineering Innovators & Entrepreneurs · <span>UCSD</span> · Spring 2026</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="recruitment.html">Recruitment</a>
+    <a href="events.html">Events</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="effects.js"></script>
+</body>
+</html>
