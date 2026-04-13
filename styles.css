@@ -76,7 +76,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 16px 48px;
+  padding: 6px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,6 +91,15 @@ nav {
   font-size: 1.125rem;
   letter-spacing: 0.04em;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
 }
 
 .nav-logo span { color: var(--phosphor); }
