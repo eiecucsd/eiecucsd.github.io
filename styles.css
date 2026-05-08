@@ -1,6 +1,8 @@
 /* Don't Know What To Name This Style
 #################################*/
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nova+Mono&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 :root {
   --bg: #050B15;
   --bg-card: #08111D;
@@ -38,7 +40,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   min-height: 100vh;
   overflow-x: hidden;
@@ -111,7 +113,7 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -195,7 +197,7 @@ nav {
 }
 
 .hero-eyebrow {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -303,7 +305,7 @@ h1 em::after {
 }
 
 .stat-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -321,7 +323,7 @@ h1 em::after {
 .stat-number.small {
   font-size: 0.875rem;
   font-weight: 400;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   max-width: none;
   text-align: left;
   line-height: 1.5;
@@ -349,14 +351,23 @@ h1 em::after {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.30s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+/* Reveal every stagger child once .visible is set; nth-child rules below
+   only set the per-item delay. The previous version capped at 8 children,
+   which silently hid items 9+ at opacity:0. */
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.10s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.20s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.30s; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.40s; }
+.reveal-stagger.visible > *:nth-child(n+9) { transition-delay: 0.45s; }
 
 /* Sections
 #################################*/
@@ -372,7 +383,7 @@ h1 em::after {
 }
 
 .section-eyebrow {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -487,7 +498,7 @@ h1 em::after {
 }
 
 .card-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.12em;
   color: var(--muted);
@@ -518,7 +529,7 @@ h1 em::after {
 }
 
 .tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.06em;
   padding: 4px 10px;
@@ -558,10 +569,15 @@ h1 em::after {
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  display: block;
 }
 
 .team-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--phosphor);
   transform: translateY(-3px);
 }
 
@@ -575,7 +591,7 @@ h1 em::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-weight: 500;
   font-size: 1rem;
   color: var(--phosphor);
@@ -603,7 +619,7 @@ h1 em::after {
 }
 
 .team-role {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -612,10 +628,149 @@ h1 em::after {
   text-shadow: 0 0 8px var(--phosphor-dim);
 }
 
-.team-major {
-  font-size: 0.875rem;
+/* Board Modal — opens when a team-card is clicked.
+   Injected into body once by sheets.js so it survives SPA page swaps.
+#################################*/
+
+.board-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.board-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.board-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 11, 21, 0.85);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.board-modal-card {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  max-width: 440px;
+  width: 100%;
+  padding: 40px 36px 36px;
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(8px);
+  transition: transform 0.22s ease;
+}
+
+.board-modal.open .board-modal-card {
+  transform: translateY(0);
+}
+
+.board-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  color: var(--phosphor);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  font-family: inherit;
+  padding: 0;
+  transition: color 0.18s;
+}
+
+.board-modal-close:hover { color: var(--text); }
+
+.board-modal-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--phosphor);
+  box-shadow: 0 0 16px var(--phosphor-dim);
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nova Mono', monospace;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--phosphor);
+  overflow: hidden;
+}
+
+.board-modal-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.board-modal-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.board-modal-role {
+  font-family: 'Nova Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phosphor);
+  margin-bottom: 28px;
+  text-shadow: 0 0 8px var(--phosphor-dim);
+}
+
+.board-modal-block {
+  text-align: left;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.board-modal-block:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.board-modal-label {
+  font-family: 'Nova Mono', monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--phosphor);
+  margin-bottom: 8px;
+}
+
+.board-modal-text {
+  font-size: 0.9rem;
   color: var(--text-dim);
-  line-height: 1.5;
+  line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+  .board-modal-card { padding: 36px 24px 28px; }
+  .board-modal-avatar { width: 110px; height: 110px; }
 }
 
 /* About / Mission
@@ -725,7 +880,7 @@ h1 em::after {
 }
 
 .cta-btn {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -774,7 +929,7 @@ h1 em::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   color: var(--muted);
   letter-spacing: 0.06em;
@@ -833,7 +988,7 @@ h1 em::after {
 }
 
 .contact-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -873,7 +1028,7 @@ h1 em::after {
 .project-header-left { display: flex; flex-direction: column; gap: 8px; }
 
 .project-num {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.12em;
   color: var(--muted);
@@ -898,7 +1053,7 @@ h1 em::after {
 .project-tags { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-start; flex-shrink: 0; }
 
 .ptag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.06em;
   padding: 4px 10px;
@@ -953,7 +1108,7 @@ h1 em::after {
 }
 
 .role-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -986,14 +1141,14 @@ h1 em::after {
 }
 
 .role-time {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   color: var(--muted);
   letter-spacing: 0.06em;
 }
 
 .apply-btn {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1027,7 +1182,7 @@ h1 em::after {
 }
 
 .filter-btn {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1091,7 +1246,7 @@ h1 em::after {
 }
 
 .timeline-date {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1140,7 +1295,7 @@ h1 em::after {
 }
 
 .event-meta span {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.06em;
   color: var(--muted);
@@ -1161,7 +1316,7 @@ footer {
 }
 
 .footer-text {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.08em;
   color: var(--muted);
@@ -1175,7 +1330,7 @@ footer {
 }
 
 .footer-links a {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.625rem;
   letter-spacing: 0.08em;
   color: var(--muted);
@@ -1336,7 +1491,7 @@ footer {
 }
 
 .four04-home {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Nova Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
