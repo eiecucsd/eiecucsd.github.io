@@ -1590,3 +1590,31 @@ footer {
     padding-right: 20px;
   }
 }
+
+/* hackathon promo - styled blue for SoPE hackathon 
+#################################*/
+
+.hackathon-promo {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 100px;
+  border: 1.5px solid #10BAE0;
+  background: #10BAE0;
+  color: #050B15;
+  font-weight: 500;
+  box-shadow: 0 0 16px rgba(16, 186, 224, 0.35);
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.hackathon-promo:hover {
+  background: #3FD0F0;
+  border-color: #3FD0F0;
+  box-shadow: 0 0 22px rgba(16, 186, 224, 0.55);
+  transform: translateY(-1px);
+}

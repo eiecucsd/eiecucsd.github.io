@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIEC × SoPE Hackathon | UCSD - May 30, 2026</title>
+<meta name="description" content="A 4-hour healthcare hackathon at UC San Diego. EIEC × Society of Physician Entrepreneurs. Get paired with a clinician, tackle a real clinical problem, ship a working prototype by noon.">
+<meta property="og:title" content="EIEC × SoPE Hackathon">
+<meta property="og:description" content="4 hours at UCSD. Pair with a clinician. Build with AI. Ship something real before lunch. May 30, 2026.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inclusive+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-dots"></div>
+<div class="grain"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="EIEC%20Logo.png" alt="EIEC logo" class="eiec-logo">
+    <span class="x">×</span>
+    <img src="SOPE.png" alt="SoPE logo" class="mark">
+  </a>
+  <div class="nav-links">
+    <a href="#why">Why</a>
+    <a href="#challenge">Format</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#faq">FAQ</a>
+    <a href="../index.html" class="nav-link-home">EIEC Home</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/1QGaiU10ki5ufS47aFEy7snF__JctijDUYjaYoNR4EHI/viewform" target="_blank" rel="noopener" class="nav-cta">Register →</a>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="hero-wrapper">
+  <canvas class="hero-particles" aria-hidden="true"></canvas>
+  <section class="hero">
+    <div class="hero-center">
+      <h1>Prototype healthcare,<br><em data-text="in one morning.">in one morning.</em></h1>
+      <p class="hero-sub">A 4-hour hackathon at UC San Diego with the Society of Physician Entrepreneurs, a biomedical technology entrepreneurship club. Student teams pair with a practicing clinician and use modern AI coding tools to turn real clinical problems into working prototypes before lunch.</p>
+      <div class="hero-actions">
+        <a href="https://docs.google.com/forms/d/1QGaiU10ki5ufS47aFEy7snF__JctijDUYjaYoNR4EHI/viewform" target="_blank" rel="noopener" class="btn-primary">Register →</a>
+        <a href="#challenge" class="btn-ghost">What is this?</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero-vitals">
+    <div class="vital">
+      <span class="vital-label">When</span>
+      <span class="vital-value accent">Sat May 30</span>
+    </div>
+    <div class="vital">
+      <span class="vital-label">Where</span>
+      <span class="vital-value">DIB - UCSD</span>
+    </div>
+    <div class="vital">
+      <span class="vital-label">Duration</span>
+      <span class="vital-value">8am–12pm</span>
+    </div>
+    <div class="vital">
+      <span class="vital-label">Format</span>
+      <span class="vital-value">Teams of 3-5</span>
+    </div>
+  </div>
+</div>
+
+<hr class="glow-line">
+
+<section class="section" id="why">
+  <div class="reveal">
+    <div class="section-title">Clinicians, engineers, modern AI tools.</div>
+    <p class="section-desc">A first-of-its-kind morning at UCSD: real clinical problems, brought by practicing physicians, prototyped by student teams using modern AI coding tools. The goal is to innovate healthcare through entrepreneurship and build an environment that fosters students' creativity, diversity, and unique talents.</p>
+  </div>
+  <div class="pillar-grid reveal-stagger">
+    <div class="pillar">
+      <div class="pillar-num">Clinician on every team</div>
+      <div class="pillar-title">A real doctor, with a real problem.</div>
+      <p class="pillar-text">Each team is paired with a clinician from SoPE who brings a healthcare problem they actually want solved. They bring the domain knowledge; you bring the code and the curiosity.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">AI-paced</div>
+      <div class="pillar-title">Built around modern AI tools.</div>
+      <p class="pillar-text">Modern AI coding tools are the assumed default, compressing what used to take weeks of dev work into a single morning. You're not racing the clock so much as showing what an AI-augmented team can actually ship in a focused window.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">No medical background needed</div>
+      <div class="pillar-title">If you can code (or want to learn), you belong here.</div>
+      <p class="pillar-text">Engineers, entrepreneurs, designers, and researchers are all welcome; the clinician on your team handles the medical context so you can focus on the building.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">First 20 spots free</div>
+      <div class="pillar-title">Limited seats. Open to all UCSD students.</div>
+      <p class="pillar-text">There are roughly 50 total spots across about 12 teams, with the first 20 registrants free; additional spots open up as we bring on biotech and hospital sponsors. Food, mentorship, and prizes are included for everyone who participates.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="glow-line">
+
+<section class="section" id="challenge">
+  <div class="reveal">
+    <div class="section-title">Real clinical problems. <em>Working prototypes.</em></div>
+    <p class="section-desc">The morning opens with clinicians from the Society of Physician Entrepreneurs presenting problems they actually want solved: workflows, patient-facing tools, diagnostics, anything where a working prototype could change a real day in the clinic.</p>
+  </div>
+
+  <div class="challenge reveal">
+    <div class="challenge-copy">
+      <h3>Four hours. One clinician. Ship something that runs.</h3>
+      <p>Teams of 3–5 students plus a professional clinician work together with modern AI coding tools to take a clinical problem from idea to a demo-able prototype before noon, with students pulled from engineering, entrepreneurship, design, and wherever else makes sense for the problem in front of them.</p>
+      <p>The bar isn't a polished product; it's a prototype that runs, that addresses the clinician's real problem, and that your team can confidently explain end to end.</p>
+    </div>
+    <div class="challenge-meta">
+      <div class="challenge-meta-row">
+        <span class="challenge-meta-key">Date</span>
+        <span class="challenge-meta-val"><span class="accent">Sat May 30</span> - 2026</span>
+      </div>
+      <div class="challenge-meta-row">
+        <span class="challenge-meta-key">Time</span>
+        <span class="challenge-meta-val">8:00 am – 12:00 pm</span>
+      </div>
+      <div class="challenge-meta-row">
+        <span class="challenge-meta-key">Location</span>
+        <span class="challenge-meta-val">Design &amp; Innovation Building</span>
+      </div>
+      <div class="challenge-meta-row">
+        <span class="challenge-meta-key">Format</span>
+        <span class="challenge-meta-val">~12 teams - 3-5 people each</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="glow-line">
+
+<section class="section" id="schedule">
+  <div class="reveal">
+    <div class="section-title">How the <em>morning</em> runs.</div>
+    <p class="section-desc">One Saturday morning, four hours, with a hard stop at noon. The rough breakdown is below; exact times will be confirmed closer to the event.</p>
+  </div>
+
+  <div class="timeline reveal-stagger">
+    <div class="timeline-item">
+      <div class="timeline-label">8:00 am</div>
+      <div class="timeline-card">
+        <h3>Welcome &amp; coffee</h3>
+        <p>Arrive at DIB, grab coffee, meet your team and clinician.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">8:15 am</div>
+      <div class="timeline-card">
+        <h3>Keynote: Bedirhan Keskin, MD</h3>
+        <p>Gold Winner of the Anthropic Claude Code Hackathon, giving a short talk that sets the tone for what AI-paced healthcare prototyping can actually look like in practice.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">9:00 am</div>
+      <div class="timeline-card">
+        <h3>Hackathon: &ldquo;Idea to App&rdquo; in two hours</h3>
+        <p>Teams work with modern AI coding tools to take their clinician's problem from idea to a runnable app, with mentors and faculty on the floor throughout to help unblock anyone who gets stuck.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">11:00 am</div>
+      <div class="timeline-card">
+        <h3>Presentations</h3>
+        <p>Each team demos their prototype to the judging panel.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-label">11:45 am</div>
+      <div class="timeline-card">
+        <h3>Winners announced</h3>
+        <p>Prizes go out on the spot, and everyone's out the door by noon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="glow-line">
+
+<section class="section" id="faq">
+  <div class="reveal">
+    <div class="section-title">Questions?</div>
+  </div>
+
+  <div class="faq reveal">
+    <details class="faq-item">
+      <summary>What is the Society of Physician Entrepreneurs (SoPE)?</summary>
+      <div class="faq-answer">SoPE is a biomedical technology-focused entrepreneurship organization, a network of practicing physicians who build businesses, products, and technology in healthcare. They're bringing the clinical problems and the clinicians to every team, with the goal of innovating healthcare through entrepreneurship and through the connection of biomedical and healthcare workers.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need a medical or healthcare background?</summary>
+      <div class="faq-answer">No. The clinician on your team brings the domain knowledge while you bring the building, so engineers, entrepreneurs, designers, and researchers are all welcome.</div>
+    </details>
+    </details>
+    <details class="faq-item">
+      <summary>Who can register?</summary>
+      <div class="faq-answer">Any current UC San Diego student. </div>
+    </details>
+    <details class="faq-item">
+      <summary>What are the prizes?</summary>
+      <div class="faq-answer">Prizes go to the top teams, with the exact breakdown announced closer to the event. Beyond the prizes, you walk away with mentorship connections, intros to the SoPE network of physician-founders, and the credibility of having shipped real medical-tech work alongside a doctor.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What if I'm new to coding?</summary>
+      <div class="faq-answer">Workshops and mentorship are part of the morning, and you're not expected to be a senior engineer to participate. Bring curiosity!</div>
+    </details>
+  </div>
+  <p class="faq-contact">Still have questions? Contact us at <a href="mailto:eiec@ucsd.edu">eiec@ucsd.edu</a>.</p>
+</section>
+
+<section class="section section--flush" id="register">
+  <div class="cta-banner reveal">
+    <div>
+      <h3>50 spots. <br>First 20 are free.</h3>
+      <p>Registration is the EIEC × SoPE interest form and takes a couple of minutes. Earlier sign-ups lock in the free spots and get priority team assignment.</p>
+    </div>
+    <a href="https://docs.google.com/forms/d/1QGaiU10ki5ufS47aFEy7snF__JctijDUYjaYoNR4EHI/viewform" target="_blank" rel="noopener" class="btn-primary">Register now →</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-text">EIEC <span class="accent">×</span> SoPE - UCSD - May 30, 2026</span>
+  <div class="footer-links">
+    <a href="#why">Why</a>
+    <a href="#challenge">Format</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://thephysicianproject.com/" target="_blank" rel="noopener">SoPE ↗</a>
+    <a href="../index.html">EIEC ↗</a>
+  </div>
+</footer>
+
+<script src="hackathon.js"></script>
+</body>
+</html>
