@@ -1594,14 +1594,33 @@ footer {
 /* hackathon promo - styled blue for SoPE hackathon 
 #################################*/
 
-.hackathon-promo {
+.hackathon-promo-wrap {
   display: inline-block;
+  position: relative;
   margin-top: 28px;
+}
+
+.hackathon-promo-particles {
+  position: absolute;
+  top: -55px;
+  bottom: -55px;
+  left: -70px;
+  right: -70px;
+  width: calc(100% + 140px);
+  height: calc(100% + 110px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hackathon-promo {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 14px 28px;
+  padding: 16px 34px;
   border-radius: 100px;
   border: 1.5px solid #10BAE0;
   background: #10BAE0;
@@ -1617,4 +1636,44 @@ footer {
   border-color: #3FD0F0;
   box-shadow: 0 0 22px rgba(16, 186, 224, 0.55);
   transform: translateY(-1px);
+}
+
+.nav-announce {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  white-space: nowrap;
+  transition: color 0.18s;
+}
+
+.nav-announce-arrow {
+  color: #10BAE0;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.18s;
+}
+
+.nav-announce:hover {
+  color: #10BAE0;
+}
+
+.nav-announce:hover .nav-announce-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 960px) {
+  .nav-announce {
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  .nav-announce-arrow { font-size: 0.95rem; }
+}
+
+@media (max-width: 780px) {
+  .nav-announce { display: none; }
 }

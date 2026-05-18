@@ -866,7 +866,7 @@ function navigateTo(href, pushState = true) {
         initCarousel();
 
         // Init page-specific 3D elements
-        if (href === 'index.html') initGear();
+        if (href === 'index.html') { initGear(); initHackathonPromoParticles(); }
         if (href === 'events.html') initCalendar();
 
         // Re-load sheet data (board + events)
@@ -884,6 +884,78 @@ function navigateTo(href, pushState = true) {
   }, 180); // Match CSS transition duration
 }
 
+function initHackathonPromoParticles() {
+  const canvas = document.querySelector('.hackathon-promo-particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const COUNT = 22;
+  const COLOR = '16, 186, 224';
+  let w = 0, h = 0;
+  let particles = [];
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return false;
+    w = rect.width;
+    h = rect.height;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return true;
+  }
+
+  function spawn() {
+    particles = [];
+    for (let i = 0; i < COUNT; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        r: 0.8 + Math.random() * 1.4,
+        baseOp: 0.10 + Math.random() * 0.18,
+        phase: Math.random() * Math.PI * 2,
+      });
+    }
+  }
+
+  function draw(now) {
+    if (w === 0 || h === 0) {
+      if (!resize()) {
+        requestAnimationFrame(draw);
+        return;
+      }
+      spawn();
+    }
+
+    ctx.clearRect(0, 0, w, h);
+
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) { p.x = 0; p.vx *= -1; }
+      if (p.x > w) { p.x = w; p.vx *= -1; }
+      if (p.y < 0) { p.y = 0; p.vy *= -1; }
+      if (p.y > h) { p.y = h; p.vy *= -1; }
+
+      const flicker = Math.sin(now / 1400 + p.phase) * 0.5 + 0.5;
+      const op = p.baseOp + flicker * 0.14;
+      ctx.fillStyle = `rgba(${COLOR}, ${op.toFixed(3)})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  spawn();
+  window.addEventListener('resize', () => { if (resize()) spawn(); });
+  requestAnimationFrame(draw);
+}
+
 // INIT ALL
 document.addEventListener('DOMContentLoaded', () => {
   initParticles();
@@ -893,5 +965,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTilt();
   initWaveformPulse();
   initCarousel();
+  initHackathonPromoParticles();
   initSPA();
 });
